@@ -1,0 +1,8 @@
+<article class="company-container" *ngIf="companies.length > 0">
+  <div class="title">
+    <label>Featured Companies</label>
+    <a href="#">See All</a>
+  </div>
+  <app-company-component *ngFor="let company of companies" [company]="company"></app-company-component>
+</article>
+

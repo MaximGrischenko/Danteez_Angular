@@ -1,0 +1,116 @@
+<div class="support-container">
+  <div class="top-container">
+    <nav>
+      <a class="logotype" routerLink="../app/feed" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact:true}">
+        <svg width="130" height="39" viewBox="0 0 130 39">
+          <use xlink:href="assets/svg/logo-img.svg#logo"></use>
+        </svg>
+      </a>
+      <button>Log In Now</button>
+    </nav>
+    <h1>Home of Dentistry</h1>
+    <p>Denteez was created by dentists for dentistry in order to
+      <br>
+      make the life of everyone involved in dentistry easier.
+    </p>
+  </div>
+  <div class="middle-container">
+    <form #Form="ngForm">
+      <p>Fields marked “*” are required</p>
+      <div class="group">
+        <label>Enquiry Type *</label>
+        <ul class="select" (click)="onShowOptions()">{{selectedEnquiry?.name}}
+          <label *ngIf="!selectedEnquiry?.name">Select enquiry type</label>
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="assets/svg/circle-down.svg#circle-down"></use>
+          </svg>
+          <div class="options" *ngIf="isShowOptions">
+            <li class="option" *ngFor="let enquiry of enquiries"
+                (click)="onSelectOption(enquiry)">{{enquiry.name}}
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="group">
+        <input id="enquiry" [hidden]="selectedEnquiry?.name !== 'Other'"
+               name="enquiry"
+               type="text"
+               placeholder="Other"
+               autocomplete="off"
+               [(ngModel)]="enquiry_type"
+               required/>
+      </div>
+      <div class="group-division">
+        <div class="group">
+          <label for="name">Name *</label>
+          <input id="name"
+                 name="name"
+                 type="text"
+                 autocomplete="off"
+                 [(ngModel)]="user_name"
+                 required/>
+        </div>
+        <div class="group">
+          <label for="email">Email *</label>
+          <input id="email"
+                 name="email"
+                 type="email"
+                 autocomplete="off"
+                 [(ngModel)]="email"
+                 email
+                 required/>
+        </div>
+      </div>
+      <div class="group">
+        <label for="subject">Subject *</label>
+        <input id="subject"
+               name="subject"
+               type="text"
+               autocomplete="off"
+               [(ngModel)]="subject"
+               required/>
+      </div>
+      <div class="group">
+        <div class="description">
+          <label for="description">Description *</label>
+          <label>{{description.length}}/1000</label>
+        </div>
+        <textarea id="description"
+                  name="description"
+                  rows="5"
+                  maxlength="1000"
+                  [(ngModel)]="description"
+                  required>
+            </textarea>
+      </div>
+      <div class="loaded-image">
+        <img [src]="url" alt="placeholder" (click)="fileInput.click()"/>
+        <input style="display: none"
+               type="file"
+               accept="image/png, image/jpeg, image/jpg"
+               (change)="onSelectFile($event)"
+               #fileInput
+        />
+      </div>
+      <div class="group">
+        <button [disabled]='Form.invalid' class="btn btn-success" (click)="onSubmit()">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="bottom-container">
+    <h1>About Denteez</h1>
+    <div class="columns">
+      <p>Why is it always so difficult to find what you are looking for in dentistry? Whether
+        it is the latest advancement in technology or techniques or simply a review or understanding
+        of the vast amount of products? Perhaps finding someone to just fix your broken equipment or
+        simply hiring new staff or looking for that new job?
+      </p>
+      <p>Our mission is to give every dental professional the possibility to discuss and share all
+        aspects of their profession, their practice and their business. We aim to make the world of
+        dentistry easy and accessible, so every dental professional can find what they are looking for
+        quickly and easily all in one place.
+      </p>
+    </div>
+  </div>
+</div>

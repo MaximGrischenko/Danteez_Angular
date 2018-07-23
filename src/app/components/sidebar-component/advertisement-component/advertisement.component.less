@@ -1,0 +1,41 @@
+@import "../../../../assets/styles/joined";
+
+div {
+  font-family: @font-family-regular;
+
+  &.title {
+    margin-top: 20px;
+    padding: 0 0 17px 0;
+    label {
+      color: @advertisements-preview-title-color;
+      font-size: 0.875em;
+      font-weight: 400;
+    }
+  }
+  &.publisher {
+    padding: 8px 0 20px 0;
+    border-bottom: 1px solid @borders-separators-color;
+    p {
+      color: @advertisements-publisher-color;
+      font-size: 0.6875em;
+      font-weight: 400;
+    }
+  }
+}
+
+#advertisement-wrapper {
+  width: 215px;
+  min-height: 300px;
+  overflow-x: hidden;
+
+  .banner-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    li {
+      min-width: 215px;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,28 @@
+@import "../../../../assets/styles/joined";
+
+div.service-preview {
+  width: 138px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+
+  .service-preview-icon {
+    border: 1px solid @borders-separators-color;
+    margin-bottom: 15px;
+  }
+
+  .service-preview-description {
+    color: #1c2534;
+    font-family: @font-family-regular;
+    font-size: 0.875em;
+  }
+
+  &:hover {
+    .service-preview-icon {
+      background-color: #f4f7fb;
+    }
+    .service-preview-description {
+      color: #71973c;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="title">
+  <label>Advertisement</label>
+</div>
+<div id="advertisement-wrapper" [ngStyle]="advertisementWrapperStyle">
+  <ul class="banner-inner" #advertisement>
+    <li *ngFor="let item of items;" class="advertisement-item" (mouseenter)="stop()" (mouseleave)="repeat()">
+      <ng-container [ngTemplateOutlet]="item.template"></ng-container>
+    </li>
+  </ul>
+</div>
+<div class="publisher">
+  <p>Ads By Denteez.com</p>
+</div>

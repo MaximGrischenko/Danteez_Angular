@@ -1,0 +1,30 @@
+<app-header></app-header>
+<section class="content-wrapper">
+  <div class="row">
+    <app-sidebar-component class="aside">
+      <app-navigation></app-navigation>
+      <app-advertisement>
+        <ng-container *ngFor="let banner of advertisements[0];">
+          <ng-container *appAdvertisementItem>
+            <img class="banner" src={{banner.url}} />
+          </ng-container>
+        </ng-container>
+      </app-advertisement>
+      <app-companies-list></app-companies-list>
+    </app-sidebar-component>
+    <section class="content-container">
+      <router-outlet></router-outlet>
+    </section>
+    <app-sidebar-component>
+      <app-users-list></app-users-list>
+      <app-products-list></app-products-list>
+      <app-advertisement>
+        <ng-container *ngFor="let banner of advertisements[1];">
+          <ng-container *appAdvertisementItem>
+            <img class="item" src={{banner.url}} />
+          </ng-container>
+        </ng-container>
+      </app-advertisement>
+    </app-sidebar-component>
+  </div>
+</section>

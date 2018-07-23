@@ -1,0 +1,28 @@
+@import "../../../../assets/styles/joined";
+
+article.product-container {
+  font-family: @font-family-regular;
+  border-bottom: 1px solid @borders-separators-color;
+  padding-top: 20px;
+  div.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 17px 0;
+    label {
+      color: @products-preview-title-color;
+      font-size: 0.875em;
+      font-weight: 400;
+    }
+
+    a {
+      color: @products-preview-links-color;
+      font-size: 0.875em;
+      font-weight: 400;
+
+      &:hover {
+        color: @products-preview-links-hover-color;
+        .transition();
+      }
+    }
+  }
+}

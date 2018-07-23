@@ -1,0 +1,42 @@
+@import "../../../../../assets/styles/joined";
+
+div.product {
+  font-family: @font-family-regular;
+  &-preview {
+    padding-bottom: 20px;
+    h3 {
+      color: @products-preview-name-color;
+      font-size: 1em;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+  }
+  &-about {
+    display: flex;
+
+    img {
+      min-width: 80px;
+      max-width: 80px;
+      height: 80px;
+      max-height: 80px;
+    }
+
+    img:hover {
+      border-radius: 50%;
+      .transition();
+    }
+
+    img:not(:hover) {
+      border-radius: 0;
+      .transition();
+    }
+  }
+  &-description {
+    margin-left: 10px;
+    p {
+      color: @products-preview-description-color;
+      font-size: 0.875em;
+      font-weight: 400;
+    }
+  }
+}

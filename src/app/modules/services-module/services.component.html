@@ -1,0 +1,9 @@
+<div id="services-container">
+  <div id="services-title">
+    <h1>Service Directory</h1>
+    <button>Add New Service</button>
+  </div>
+  <div id="services-content-wrapper">
+    <app-service-component *ngFor="let service of services" [service]="service"></app-service-component>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+@import "../../../assets/styles/joined";
+
+div#services-container {
+  margin: 0 15px;
+  div {
+    &#services-title {
+      min-height: 58px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        color:@services-title-color;
+        font-family: @font-family-regular;
+        font-size: 1.875em;
+      }
+      button {
+        border-radius: 5px;
+        background-color: @services-button-background-color;
+        color: @services-button-text-color;
+        padding: 10px 20px;
+        font-family: @font-family-regular;
+        font-size: 0.875em;
+        border: none;
+        outline: none;
+
+        &:hover {
+          background-color: @services-button-hover-color;
+          .transition();
+        }
+      }
+    }
+    &#services-content-wrapper {
+      padding: 15px 15px;
+      border-radius: 5px;
+      border: 1px solid @borders-separators-color;
+      background-color: @services-background-color;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      grid-column-gap: 30px;
+      grid-row-gap: 15px;
+    }
+  }
+}

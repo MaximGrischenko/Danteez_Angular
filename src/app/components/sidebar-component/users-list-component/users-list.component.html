@@ -1,0 +1,8 @@
+<article class="user-container" *ngIf="users.length > 0">
+  <div class="title">
+    <label>People you may know</label>
+    <a href="#">See All</a>
+  </div>
+  <app-user-component *ngFor="let user of users" [user]="user"></app-user-component>
+</article>
+

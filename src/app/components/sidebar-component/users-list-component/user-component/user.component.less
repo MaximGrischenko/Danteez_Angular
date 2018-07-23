@@ -1,0 +1,59 @@
+@import "../../../../../assets/styles/joined";
+
+div.user {
+  font-family: @font-family-regular;
+  &-preview {
+    padding-bottom: 20px;
+    h3 {
+      color: @users-preview-name-color;
+      font-size: 1em;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+  }
+  &-about {
+    display: flex;
+
+    img {
+      min-width: 80px;
+      max-width: 80px;
+      height: 80px;
+      max-height: 80px;
+    }
+
+    img:hover {
+      border-radius: 50%;
+      .transition();
+    }
+
+    img:not(:hover) {
+      border-radius: 0;
+      .transition();
+    }
+  }
+  &-description {
+    margin-left: 10px;
+    p {
+      color: @users-preview-description-color;
+      font-size: 0.875em;
+      font-weight: 400;
+
+      &:nth-child(even) {
+        line-height: 30px;
+      }
+    }
+
+    a {
+      color: @users-preview-links-color;
+      font-size: 0.75em;
+      font-weight: 400;
+
+      &:hover {
+        color: @users-preview-links-hover-color;
+        .transition();
+      }
+    }
+  }
+}
+
+

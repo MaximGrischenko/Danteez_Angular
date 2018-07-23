@@ -1,0 +1,50 @@
+@import "../../../../assets/styles/joined";
+nav#navigation-bar {
+  ul.navigation {
+    li.nav-element {
+      a {
+        display: flex;
+        align-items: center;
+        position: relative;
+        min-height: 47px;
+        color: @navigation-links-color;
+        border-bottom: 1px solid @borders-separators-color;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: transparent;
+          content: '\2022';
+          text-shadow: 0 0 transparent;
+          font-size: 2em;
+          .transition();
+          transform: translateX(-50%);
+          pointer-events: none;
+        }
+
+        &:not(.active):hover::before {
+          color: @navigation-links-hover-color;
+          text-shadow: 15px 0 @navigation-links-hover-color, -15px 0 @navigation-links-hover-color;
+          .transition();
+        }
+
+        &.active {
+          color: @navigation-links-active-color;
+        }
+
+        svg {
+          fill: @navigation-icons-color;
+        }
+
+        p {
+          margin-left: 25px;
+          color: inherit;
+          font-family: @font-family-regular;
+          font-size: 1em;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
